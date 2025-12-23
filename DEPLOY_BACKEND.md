@@ -58,7 +58,7 @@
    JWT_SECRET=your-super-secret-jwt-key-production-change-this-to-random-string
    PORT=5001
    NODE_ENV=production
-   FRONTEND_URL=https://frontend-capyngenindia.vercel.app
+   FRONTEND_URL=https://frontend-lookstrendz.vercel.app
    ```
 
 5. **Deploy:**

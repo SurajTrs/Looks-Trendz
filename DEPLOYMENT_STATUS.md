@@ -2,7 +2,7 @@
 
 ## ✅ FRONTEND - DEPLOYED SUCCESSFULLY!
 
-**Live URL:** https://frontend-capyngenindia.vercel.app
+**Live URL:** https://frontend-lookstrendz.vercel.app
 **Status:** ✅ Online and Running
 **Platform:** Vercel
 **Build:** Successful
@@ -121,9 +121,9 @@ Status: ⏳ AWAITING DEPLOYMENT
 
 ## 📱 Application URLs
 
-**Live Frontend:** https://frontend-capyngenindia.vercel.app
+**Live Frontend:** https://frontend-lookstrendz.vercel.app
 **Backend API:** (Deploy to get URL)
-**Admin Panel:** https://frontend-capyngenindia.vercel.app/admin/dashboard
+**Admin Panel:** https://frontend-lookstrendz.vercel.app/admin/dashboard
 **GitHub Repo:** https://github.com/SurajTrs/Looks-Trendz
 
 ---
