@@ -91,10 +91,10 @@ export default function BookAppointmentPage() {
     
     let filtered: any = {}
     
-    Object.entries(servicesData.data.services).forEach(([category, services]: [string, any[]]) => {
+    Object.entries(servicesData.data.services).forEach(([category, services]) => {
       if (selectedCategory !== 'ALL' && category !== selectedCategory) return
       
-      const matchedServices = services.filter((service: any) => {
+      const matchedServices = (services as any[]).filter((service: any) => {
         const searchLower = searchQuery.toLowerCase()
         return service.name.toLowerCase().includes(searchLower) ||
                service.description?.toLowerCase().includes(searchLower)
@@ -229,7 +229,7 @@ export default function BookAppointmentPage() {
                 <p className="text-luxury-gray-500 text-lg">No services found</p>
               </div>
             ) : (
-              Object.entries(filteredServices).map(([category, services]: [string, any[]]) => (
+              Object.entries(filteredServices).map(([category, services]) => (
                 <motion.div 
                   key={category} 
                   initial={{ opacity: 0, y: 20 }}
