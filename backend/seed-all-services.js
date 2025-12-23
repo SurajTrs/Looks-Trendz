@@ -1,0 +1,148 @@
+db.services.deleteMany({});
+
+db.services.insertMany([
+  // FACIAL SERVICES - Regular Facials
+  {name:"Silver Facial",description:"Premium silver facial treatment",category:"SKIN",duration:60,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Acne Ozone Facial",description:"Specialized ozone treatment for acne",category:"SKIN",duration:75,price:3000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Fresh Fruit Facial",description:"Natural fruit-based facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Aloevera Facial",description:"Soothing aloe vera facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Chocolate Facial",description:"Luxurious chocolate facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Gold Facial",description:"Premium gold-infused facial",category:"SKIN",duration:75,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Diamond Facial",description:"Luxury diamond facial for radiance",category:"SKIN",duration:90,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"O3+ Facial",description:"Advanced O3+ facial treatment",category:"SKIN",duration:75,price:2200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Ragga Facial",description:"Ragga herbal facial treatment",category:"SKIN",duration:75,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cassamara Facial",description:"Premium Cassamara peel facial",category:"SKIN",duration:90,price:3000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"VLCC Anti Tan Facial",description:"VLCC anti-tan treatment",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"VLCC Insta Glow Facial",description:"VLCC instant glow facial",category:"SKIN",duration:60,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"O2+ Natures Facial",description:"O2+ natural facial treatment",category:"SKIN",duration:75,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Fair4Sure Ozone Facial",description:"Fair4Sure ozone brightening facial",category:"SKIN",duration:75,price:1600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Papaya Facial",description:"Natural papaya enzyme facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Pigmentation Ozone Facial",description:"Ozone treatment for pigmentation",category:"SKIN",duration:90,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Red Wine Facial",description:"Anti-aging red wine facial",category:"SKIN",duration:75,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Silk Berry Facial",description:"Silk berry rejuvenating facial",category:"SKIN",duration:75,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Banana Facial",description:"Nourishing banana facial",category:"SKIN",duration:60,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Platinum Facial",description:"Premium platinum facial",category:"SKIN",duration:90,price:2000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // L'Oréal / Cheryl Facials
+  {name:"Cheryl Glow Vita",description:"Cheryl vitamin glow facial",category:"SKIN",duration:75,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cheryl Glow Snowvite",description:"Cheryl brightening facial",category:"SKIN",duration:75,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cheryl Glow Oxy Blast",description:"Cheryl oxygen blast facial",category:"SKIN",duration:75,price:1700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cheryl Glow Tan Clear",description:"Cheryl tan removal facial",category:"SKIN",duration:75,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cheryl Glow Sensi Glow",description:"Cheryl sensitive skin facial",category:"SKIN",duration:75,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Cheryl Glow O2 C2",description:"Cheryl oxygen facial",category:"SKIN",duration:90,price:2200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // Lotus Facials
+  {name:"Lotus Facial",description:"Lotus herbal facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Rejuvina Facial",description:"Lotus rejuvenating facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hydra Facial",description:"Deep hydration facial",category:"SKIN",duration:75,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Goederme Facial",description:"Goederme professional facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Gold Sheen Facial",description:"Gold sheen radiance facial",category:"SKIN",duration:75,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Intafair Facial",description:"Instant fairness facial",category:"SKIN",duration:75,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"4 Layers Facial",description:"Four layer deep treatment facial",category:"SKIN",duration:90,price:2000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Preseruita Facial",description:"Preseruita anti-aging facial",category:"SKIN",duration:90,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Treatment Facial",description:"Specialized treatment facial",category:"SKIN",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Ozone Treatment Facial",description:"Ozone therapy facial",category:"SKIN",duration:90,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Aroma Oxygen Facial",description:"Aromatherapy oxygen facial",category:"SKIN",duration:75,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // CLEAN-UP SERVICES
+  {name:"Fruit Clean-up",description:"Quick fruit-based cleanup",category:"SKIN",duration:30,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Aloevera Clean-up",description:"Soothing aloe cleanup",category:"SKIN",duration:30,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Veg Peel Instant Glow",description:"Vegetable peel instant glow",category:"SKIN",duration:30,price:700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Lotus Clean-up",description:"Lotus herbal cleanup",category:"SKIN",duration:30,price:600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Pearl Clean-up",description:"Pearl radiance cleanup",category:"SKIN",duration:30,price:450,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Chocolate Clean-up",description:"Chocolate cleanup treatment",category:"SKIN",duration:30,price:450,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Gold Clean-up",description:"Gold-infused cleanup",category:"SKIN",duration:30,price:700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Diamond Clean-up",description:"Diamond cleanup treatment",category:"SKIN",duration:30,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"O3+ Clean-up",description:"O3+ professional cleanup",category:"SKIN",duration:30,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Ragga Clean-up",description:"Ragga herbal cleanup",category:"SKIN",duration:30,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"VLCC Anti Tan Clean-up",description:"VLCC anti-tan cleanup",category:"SKIN",duration:30,price:600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"VLCC Insta Glow Clean-up",description:"VLCC instant glow cleanup",category:"SKIN",duration:30,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Papaya Clean-up",description:"Papaya enzyme cleanup",category:"SKIN",duration:30,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Seab Clean-up",description:"Seab professional cleanup",category:"SKIN",duration:30,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Oxy D-Tan",description:"Oxygen de-tan treatment",category:"SKIN",duration:20,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Asta D-Tan",description:"Asta de-tan treatment",category:"SKIN",duration:30,price:700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"O2 One D-Tan",description:"O2 One de-tan treatment",category:"SKIN",duration:20,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // BLEACH
+  {name:"Face Bleach (Fruit)",description:"Fruit bleach for face",category:"SKIN",duration:20,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Face Bleach (Oxy)",description:"Oxy bleach for face",category:"SKIN",duration:20,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Face Bleach (Gold)",description:"Gold bleach for face",category:"SKIN",duration:20,price:350,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Body Bleach",description:"Complete body bleaching",category:"SKIN",duration:90,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // HAIR STYLING - FEMALE
+  {name:"Women's Hair Cut",description:"Professional women's haircut",category:"HAIR",duration:45,price:350,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Baby Hair Cut",description:"Haircut for children",category:"HAIR",duration:20,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Root Touch Up (Innova)",description:"Innova root color touch up",category:"HAIR",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Root Touch Up (L'Oréal)",description:"L'Oréal root color touch up",category:"HAIR",duration:60,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Global Colour",description:"Full head hair coloring",category:"HAIR",duration:120,price:4000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Streaks (Full Head)",description:"Full head hair streaking",category:"HAIR",duration:150,price:4500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Smoothing",description:"Professional hair smoothing",category:"HAIR",duration:180,price:3500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Rebonding",description:"Permanent hair straightening",category:"HAIR",duration:240,price:3500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Keratin Treatment",description:"Keratin smoothing treatment",category:"HAIR",duration:180,price:5000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Blow Dry",description:"Professional blow dry styling",category:"HAIR",duration:30,price:250,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Pressing",description:"Hair straightening with iron",category:"HAIR",duration:30,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Tong Curls",description:"Curling with tong iron",category:"HAIR",duration:45,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Do",description:"Special occasion hairstyling",category:"HAIR",duration:60,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Balayage",description:"Hand-painted hair highlights",category:"HAIR",duration:180,price:3999,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Kera Smooth",description:"Keratin smoothing treatment",category:"HAIR",duration:180,price:5499,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Nanoplastia",description:"Nano hair straightening",category:"HAIR",duration:180,price:4499,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Botox",description:"Hair botox treatment",category:"HAIR",duration:120,price:3499,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Kera Shine",description:"Keratin shine treatment",category:"HAIR",duration:120,price:3999,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Silk Therapy",description:"Silk protein hair therapy",category:"HAIR",duration:90,price:2999,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Highlight",description:"Professional hair highlighting",category:"HAIR",duration:120,price:2499,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Protein Treatment",description:"Deep protein hair treatment",category:"HAIR",duration:90,price:2999,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // WAXING
+  {name:"Full Arms Waxing",description:"Complete arms waxing",category:"GROOMING",duration:30,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Half Arms Waxing",description:"Half arms waxing",category:"GROOMING",duration:20,price:150,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Underarms Waxing",description:"Underarm hair removal",category:"GROOMING",duration:10,price:50,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Legs Waxing",description:"Complete legs waxing",category:"GROOMING",duration:45,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Half Legs Waxing",description:"Half legs waxing",category:"GROOMING",duration:30,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Body Waxing",description:"Complete body waxing",category:"GROOMING",duration:120,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Rica Wax Full Body",description:"Rica wax full body",category:"GROOMING",duration:120,price:2000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Bikini Line Waxing",description:"Bikini area waxing",category:"GROOMING",duration:30,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // MANICURE
+  {name:"Regular Manicure",description:"Basic manicure service",category:"NAILS",duration:30,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Deluxe Manicure",description:"Premium manicure with extras",category:"NAILS",duration:45,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Lotus Spa Manicure (Luxurious)",description:"Lotus luxury spa manicure",category:"NAILS",duration:60,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Lotus Spa Manicure (Crystal)",description:"Lotus crystal spa manicure",category:"NAILS",duration:60,price:700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Reega Manicure",description:"Reega professional manicure",category:"NAILS",duration:45,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // PEDICURE
+  {name:"Regular Pedicure",description:"Basic pedicure service",category:"NAILS",duration:45,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Deluxe Pedicure",description:"Premium pedicure with scrub & steam",category:"NAILS",duration:60,price:550,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"French Pedicure",description:"French style pedicure",category:"NAILS",duration:60,price:600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Lotus Spa Pedicure (Luxurious)",description:"Lotus luxury spa pedicure",category:"NAILS",duration:75,price:700,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Lotus Spa Pedicure (Crystal)",description:"Lotus crystal spa pedicure",category:"NAILS",duration:75,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Paraffin Wax Pedicure",description:"Pedicure with paraffin wax",category:"NAILS",duration:60,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Reega Pedicure",description:"Reega professional pedicure",category:"NAILS",duration:60,price:600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // BODY SPA & MASSAGE
+  {name:"Body Massage",description:"Full body relaxation massage",category:"MASSAGE",duration:60,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Body Polishing (Ozone)",description:"Ozone body polishing treatment",category:"MASSAGE",duration:90,price:4550,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Body Polishing (Skin Secret)",description:"Skin Secret body polishing",category:"MASSAGE",duration:90,price:3500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // HAIR SPA
+  {name:"L'Oréal Normal Hair Spa",description:"L'Oréal normal hair spa treatment",category:"HAIR",duration:60,price:1000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"L'Oréal Special Hair Spa",description:"L'Oréal special hair spa treatment",category:"HAIR",duration:75,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Mythic Oil Spa",description:"Mythic oil hair spa",category:"HAIR",duration:75,price:1400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Power Dose Hair Spa",description:"Power dose intensive treatment",category:"HAIR",duration:90,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Dandruff Treatment",description:"Anti-dandruff hair treatment",category:"HAIR",duration:60,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Fall Treatment",description:"Hair fall control treatment",category:"HAIR",duration:75,price:2000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Matrix Biolage Spa",description:"Matrix Biolage hair spa",category:"HAIR",duration:60,price:600,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Renew-C Hair Spa",description:"Renew-C hair spa treatment",category:"HAIR",duration:45,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Oil Head Massage",description:"Traditional oil head massage",category:"HAIR",duration:30,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Moisture Treatment",description:"Deep moisture hair treatment",category:"HAIR",duration:60,price:1199,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Colour Treatment",description:"Color protection treatment",category:"HAIR",duration:60,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  
+  // THREADING
+  {name:"Eyebrows Threading",description:"Precision eyebrow threading",category:"GROOMING",duration:10,price:50,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Upper Lips Threading",description:"Upper lip threading",category:"GROOMING",duration:5,price:20,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Chin Threading",description:"Chin hair threading",category:"GROOMING",duration:5,price:20,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Forehead Threading",description:"Forehead hair threading",category:"GROOMING",duration:5,price:20,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Face Side Locks Threading",description:"Side locks threading",category:"GROOMING",duration:5,price:20,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Face Threading",description:"Complete face threading",category:"GROOMING",duration:20,price:80,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Face Wax (Katori)",description:"Full face katori wax",category:"GROOMING",duration:20,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Full Face Wax (Rica)",description:"Full face Rica wax",category:"GROOMING",duration:20,price:250,isActive:true,createdAt:new Date(),updatedAt:new Date()}
+]);

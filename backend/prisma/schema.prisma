@@ -1,0 +1,215 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  phone       String?  @unique
+  password    String
+  firstName   String
+  lastName    String
+  role        Role     @default(CUSTOMER)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  customer    Customer?
+  staff       Staff?
+  
+  @@map("users")
+}
+
+model Customer {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String   @unique @db.ObjectId
+  user          User     @relation(fields: [userId], references: [id])
+  dateOfBirth   DateTime?
+  gender        Gender?
+  address       String?
+  city          String?
+  loyaltyPoints Int      @default(0)
+  preferences   Json?
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  bookings      Booking[]
+  invoices      Invoice[]
+  
+  @@map("customers")
+}
+
+model Staff {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String   @unique @db.ObjectId
+  user          User     @relation(fields: [userId], references: [id])
+  employeeId    String   @unique
+  position      String
+  commissionRate Float   @default(0)
+  workingHours  Json
+  isAvailable   Boolean  @default(true)
+  serviceIds    String[] @db.ObjectId
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  bookings      Booking[]
+  leaves        StaffLeave[]
+  
+  @@map("staff")
+}
+
+model Service {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  category    ServiceCategory
+  duration    Int
+  price       Float
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("services")
+}
+
+model Booking {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  customerId  String        @db.ObjectId
+  staffId     String        @db.ObjectId
+  customer    Customer      @relation(fields: [customerId], references: [id])
+  staff       Staff         @relation(fields: [staffId], references: [id])
+  
+  bookingDate DateTime
+  startTime   DateTime
+  endTime     DateTime
+  status      BookingStatus @default(CONFIRMED)
+  totalAmount Float
+  notes       String?
+  serviceIds  String[]      @db.ObjectId
+  serviceNames String[]
+  servicePrices Float[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  invoice     Invoice?
+  
+  @@map("bookings")
+}
+
+model Invoice {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  bookingId   String        @unique @db.ObjectId
+  customerId  String        @db.ObjectId
+  booking     Booking       @relation(fields: [bookingId], references: [id])
+  customer    Customer      @relation(fields: [customerId], references: [id])
+  
+  invoiceNumber String      @unique
+  subtotal    Float
+  tax         Float         @default(0)
+  discount    Float         @default(0)
+  total       Float
+  status      InvoiceStatus @default(PENDING)
+  paymentMethod String?
+  paidAt      DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  @@map("invoices")
+}
+
+model StaffLeave {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  staffId   String    @db.ObjectId
+  staff     Staff     @relation(fields: [staffId], references: [id])
+  
+  startDate DateTime
+  endDate   DateTime
+  reason    String?
+  isApproved Boolean @default(false)
+  createdAt DateTime  @default(now())
+  
+  @@map("staff_leaves")
+}
+
+model Inventory {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  category    String
+  quantity    Int
+  minStock    Int      @default(10)
+  price       Float
+  supplier    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("inventory")
+}
+
+model Promotion {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  code        String   @unique
+  name        String
+  description String?
+  discountType DiscountType
+  discountValue Float
+  minAmount   Float?
+  maxDiscount Float?
+  startDate   DateTime
+  endDate     DateTime
+  isActive    Boolean  @default(true)
+  usageLimit  Int?
+  usedCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  
+  @@map("promotions")
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  STAFF
+  CUSTOMER
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum ServiceCategory {
+  HAIR
+  SKIN
+  GROOMING
+  BRIDAL
+  MASSAGE
+  NAILS
+  OTHER
+}
+
+enum BookingStatus {
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum InvoiceStatus {
+  PENDING
+  PAID
+  CANCELLED
+  REFUNDED
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}

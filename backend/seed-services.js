@@ -1,0 +1,22 @@
+db.Service.insertMany([
+  {name:"Men's Haircut",description:"Professional haircut with styling",category:"HAIR",duration:30,price:300,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Women's Haircut",description:"Precision cut with blow dry",category:"HAIR",duration:45,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Kids Haircut",description:"Haircut for children under 12",category:"HAIR",duration:20,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Coloring (Full)",description:"Complete hair coloring with premium products",category:"HAIR",duration:120,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Highlights",description:"Partial highlights for dimension",category:"HAIR",duration:90,price:1800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Balayage",description:"Hand-painted highlights technique",category:"HAIR",duration:150,price:3500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Hair Spa Treatment",description:"Deep conditioning and nourishment",category:"HAIR",duration:60,price:800,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Keratin Treatment",description:"Smoothing and straightening treatment",category:"HAIR",duration:180,price:4500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Classic Facial",description:"Deep cleansing and moisturizing facial",category:"SKIN",duration:60,price:1200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Gold Facial",description:"Luxury gold-infused facial treatment",category:"SKIN",duration:75,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Diamond Facial",description:"Premium diamond facial for radiance",category:"SKIN",duration:90,price:3000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Beard Trim & Styling",description:"Professional beard grooming",category:"GROOMING",duration:20,price:200,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Clean Shave",description:"Traditional hot towel shave",category:"GROOMING",duration:25,price:250,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Threading (Eyebrows)",description:"Precision eyebrow shaping",category:"GROOMING",duration:10,price:100,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Bridal Makeup",description:"Complete bridal makeup with HD finish",category:"BRIDAL",duration:120,price:8000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Party Makeup",description:"Glamorous party makeup",category:"BRIDAL",duration:60,price:2500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Swedish Massage",description:"Relaxing full body massage",category:"MASSAGE",duration:60,price:1500,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Deep Tissue Massage",description:"Therapeutic deep muscle massage",category:"MASSAGE",duration:75,price:2000,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Basic Manicure",description:"Nail shaping, cuticle care, and polish",category:"NAILS",duration:30,price:400,isActive:true,createdAt:new Date(),updatedAt:new Date()},
+  {name:"Basic Pedicure",description:"Foot care with nail polish",category:"NAILS",duration:45,price:500,isActive:true,createdAt:new Date(),updatedAt:new Date()}
+])
