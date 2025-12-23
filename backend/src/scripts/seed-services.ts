@@ -115,8 +115,7 @@ async function seedServices() {
 
     const result = await prisma.service.createMany({
       data: services,
-      skipDuplicates: true,
-    });
+    } as any);
 
     console.log(`✅ Created ${result.count} services`);
 
