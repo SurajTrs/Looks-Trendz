@@ -26,7 +26,7 @@ export default function ProfilePage() {
     setFormData({
       firstName: user.firstName || '',
       lastName: user.lastName || '',
-      phone: user.phone || '',
+      phone: (user as any).phone || '',
       dateOfBirth: '',
       address: ''
     })
