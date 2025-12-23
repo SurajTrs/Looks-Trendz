@@ -246,7 +246,7 @@ export default function BookAppointmentPage() {
                     <div className="h-0.5 flex-1 bg-gradient-to-r from-luxury-gold to-transparent via-luxury-gold/50"></div>
                   </div>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
+                    {(services as any[]).map((service: any, index: number) => (
                       <motion.button
                         type="button"
                         key={service.id}
