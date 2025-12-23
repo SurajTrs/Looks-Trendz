@@ -448,7 +448,7 @@ export default function BookAppointmentPage() {
                   <p className="text-luxury-gray-600">Services:</p>
                   <ul className="list-disc list-inside">
                     {selectedServices.map(serviceId => {
-                      const service = Object.values(servicesData?.data.services || {})
+                      const service: any = Object.values(servicesData?.data.services || {})
                         .flat()
                         .find((s: any) => s.id === serviceId)
                       return (
