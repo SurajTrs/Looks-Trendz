@@ -46,14 +46,20 @@ export default function RegisterPage() {
     setIsLoading(true)
     try {
       const { confirmPassword, ...registerData } = data
+      console.log('Registering with:', registerData)
+      console.log('API URL:', process.env.NEXT_PUBLIC_API_URL)
       const response = await authAPI.register(registerData)
+      console.log('Registration response:', response)
       const { user, token } = response.data
       
       login(user, token)
       toast.success('Registration successful! Welcome to Looks Trend\'z!')
       router.push('/dashboard')
     } catch (error: any) {
-      toast.error(error.response?.data?.error || 'Registration failed')
+      console.error('Registration error:', error)
+      console.error('Error response:', error.response)
+      const errorMessage = error.response?.data?.error || error.response?.data?.message || error.message || 'Registration failed'
+      toast.error(errorMessage)
     } finally {
       setIsLoading(false)
     }
