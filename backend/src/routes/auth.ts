@@ -4,7 +4,6 @@ import jwt from 'jsonwebtoken';
 import { body, validationResult } from 'express-validator';
 import { PrismaClient } from '@prisma/client';
 import { createError } from '../middleware/errorHandler';
-import { ObjectId } from 'mongodb';
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -40,14 +39,9 @@ router.post('/register', [
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    // Use raw MongoDB to avoid transaction requirement
-    const userId = new ObjectId().toString();
-    const customerId = new ObjectId().toString();
-    
-    await prisma.$runCommandRaw({
-      insert: 'users',
-      documents: [{
-        _id: { $oid: userId },
+    // Create user and customer
+    const user = await prisma.user.create({
+      data: {
         email,
         password: hashedPassword,
         firstName,
@@ -55,29 +49,20 @@ router.post('/register', [
         phone: phone || null,
         role: 'CUSTOMER',
         isActive: true,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }]
+        customer: {
+          create: {
+            loyaltyPoints: 0
+          }
+        }
+      },
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        role: true
+      }
     });
-
-    await prisma.$runCommandRaw({
-      insert: 'customers',
-      documents: [{
-        _id: { $oid: customerId },
-        userId: { $oid: userId },
-        loyaltyPoints: 0,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }]
-    });
-
-    const user = {
-      id: userId,
-      email,
-      firstName,
-      lastName,
-      role: 'CUSTOMER'
-    };
 
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
