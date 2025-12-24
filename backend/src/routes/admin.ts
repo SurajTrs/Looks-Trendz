@@ -304,8 +304,8 @@ router.get('/reports/revenue', authenticate, authorize(['ADMIN', 'MANAGER']), as
     // Service-wise revenue
     const serviceRevenue = revenue.reduce((acc, invoice) => {
       const booking = bookingMap.get(invoice.bookingId);
-      if (booking) {
-        booking.serviceNames.forEach((serviceName, index) => {
+      if (booking && booking.serviceNames && booking.servicePrices) {
+        booking.serviceNames.forEach((serviceName: string, index: number) => {
           if (!acc[serviceName]) {
             acc[serviceName] = { service: serviceName, revenue: 0, bookings: 0 };
           }

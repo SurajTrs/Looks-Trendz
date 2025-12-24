@@ -1,6 +1,8 @@
-import { PrismaClient, ServiceCategory } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
+
+type ServiceCategory = 'HAIR' | 'SKIN' | 'GROOMING' | 'BRIDAL' | 'MASSAGE' | 'NAILS' | 'OTHER';
 
 const services: Array<{
   name: string;
