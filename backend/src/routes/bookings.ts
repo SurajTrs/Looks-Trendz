@@ -95,8 +95,8 @@ router.post('/', authenticate, [
       });
     }
 
-    const { staffId, serviceIds, bookingDate, startTime, notes, paymentMethod } = req.body;
-    const userId = req.user!.id;
+    const { staffId, serviceIds, bookingDate, startTime, notes, paymentMethod } = (req as any).body;
+    const userId = (req as any).user!.id;
 
     console.log('Creating booking for user:', userId);
     console.log('Booking data:', { staffId, serviceIds, bookingDate, startTime });
@@ -221,7 +221,7 @@ router.post('/', authenticate, [
 // Get user bookings
 router.get('/my-bookings', authenticate, async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
+    const userId = (req as any).user!.id;
     
     const customer = await prisma.customer.findUnique({
       where: { userId }
@@ -253,8 +253,8 @@ router.patch('/:id/status', authenticate, authorize(['ADMIN', 'MANAGER', 'STAFF'
   body('status').isIn(['CONFIRMED', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED', 'NO_SHOW'])
 ], async (req: AuthRequest, res, next) => {
   try {
-    const { id } = req.params;
-    const { status } = req.body;
+    const { id } = (req as any).params;
+    const { status } = (req as any).body;
 
     const booking = await prisma.booking.update({
       where: { id },

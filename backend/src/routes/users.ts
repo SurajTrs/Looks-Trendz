@@ -11,7 +11,7 @@ const prisma = new PrismaClient();
 // Get user profile
 router.get('/profile', authenticate, async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
+    const userId = (req as any).user!.id;
     
     const user = await prisma.user.findUnique({
       where: { id: userId },
@@ -50,8 +50,8 @@ router.put('/profile', authenticate, [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const userId = req.user!.id;
-    const { firstName, lastName, phone } = req.body;
+    const userId = (req as any).user!.id;
+    const { firstName, lastName, phone } = (req as any).body;
 
     const user = await prisma.user.update({
       where: { id: userId },
@@ -92,8 +92,8 @@ router.put('/customer-profile', authenticate, [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const userId = req.user!.id;
-    const { dateOfBirth, gender, address, city, preferences } = req.body;
+    const userId = (req as any).user!.id;
+    const { dateOfBirth, gender, address, city, preferences } = (req as any).body;
 
     const customer = await prisma.customer.upsert({
       where: { userId },
@@ -135,8 +135,8 @@ router.post('/change-password', authenticate, [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const userId = req.user!.id;
-    const { currentPassword, newPassword } = req.body;
+    const userId = (req as any).user!.id;
+    const { currentPassword, newPassword } = (req as any).body;
 
     const user = await prisma.user.findUnique({
       where: { id: userId }

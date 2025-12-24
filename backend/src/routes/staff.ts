@@ -28,7 +28,7 @@ router.get('/', async (req, res, next) => {
 // Staff dashboard
 router.get('/dashboard', authenticate, authorize(['STAFF']), async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
+    const userId = (req as any).user!.id;
     
     const staff = await prisma.staff.findUnique({
       where: { userId },
@@ -107,8 +107,8 @@ router.get('/dashboard', authenticate, authorize(['STAFF']), async (req: AuthReq
 // Get staff bookings
 router.get('/bookings', authenticate, authorize(['STAFF']), async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
-    const { date, status } = req.query;
+    const userId = (req as any).user!.id;
+    const { date, status } = (req as any).query;
     
     const staff = await prisma.staff.findUnique({
       where: { userId }
@@ -149,8 +149,8 @@ router.patch('/availability', authenticate, authorize(['STAFF']), [
   body('isAvailable').isBoolean()
 ], async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
-    const { isAvailable } = req.body;
+    const userId = (req as any).user!.id;
+    const { isAvailable } = (req as any).body;
 
     const staff = await prisma.staff.update({
       where: { userId },

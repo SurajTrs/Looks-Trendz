@@ -14,7 +14,7 @@ export interface AuthRequest extends Request {
 
 export const authenticate = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
-    const token = req.headers?.authorization?.replace('Bearer ', '');
+    const token = (req as any).headers?.authorization?.replace('Bearer ', '');
     
     if (!token) {
       return res.status(401).json({ error: 'Access denied. No token provided.' });
@@ -31,7 +31,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
       return res.status(401).json({ error: 'Invalid token or user inactive.' });
     }
 
-    req.user = user;
+    (req as any).user = user;
     next();
   } catch (error) {
     res.status(401).json({ error: 'Invalid token.' });
@@ -40,7 +40,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
 
 export const authorize = (roles: string[]) => {
   return (req: AuthRequest, res: Response, next: NextFunction) => {
-    if (!req.user || !roles.includes(req.user.role)) {
+    if (!(req as any).user || !roles.includes((req as any).user.role)) {
       return res.status(403).json({ error: 'Access denied. Insufficient permissions.' });
     }
     next();

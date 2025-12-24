@@ -43,7 +43,7 @@ router.post('/create-intent', authenticate, [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { bookingId, paymentMethod } = req.body;
+    const { bookingId, paymentMethod } = (req as any).body;
     
     const booking = await prisma.booking.findUnique({
       where: { id: bookingId },
@@ -58,7 +58,7 @@ router.post('/create-intent', authenticate, [
     }
 
     // Verify booking belongs to user
-    if (booking.customer.userId !== req.user!.id) {
+    if (booking.customer.userId !== (req as any).user!.id) {
       throw createError('Unauthorized access to booking', 403);
     }
 
@@ -144,7 +144,7 @@ router.post('/verify-razorpay', authenticate, [
   body('invoiceId').isUUID()
 ], async (req: AuthRequest, res, next) => {
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, invoiceId } = req.body;
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, invoiceId } = (req as any).body;
     
     // Verify signature
     const crypto = require('crypto');
@@ -189,7 +189,7 @@ router.post('/verify-stripe', authenticate, [
   body('invoiceId').isUUID()
 ], async (req: AuthRequest, res, next) => {
   try {
-    const { payment_intent_id, invoiceId } = req.body;
+    const { payment_intent_id, invoiceId } = (req as any).body;
     
     const stripeClient = getStripe();
     if (!stripeClient) {
@@ -231,7 +231,7 @@ router.post('/verify-stripe', authenticate, [
 // Get payment history
 router.get('/history', authenticate, async (req: AuthRequest, res, next) => {
   try {
-    const userId = req.user!.id;
+    const userId = (req as any).user!.id;
     
     const customer = await prisma.customer.findUnique({
       where: { userId }
