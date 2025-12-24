@@ -90,7 +90,9 @@ router.post('/register', [
       user,
       token
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.error('Registration error:', error);
+    console.error('Error details:', error.message, error.stack);
     next(error);
   }
 });
