@@ -59,24 +59,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/health', async (req, res) => {
-  try {
-    await prisma.$connect();
-    const count = await prisma.service.count();
-    res.json({ 
-      status: 'OK', 
-      timestamp: new Date().toISOString(),
-      database: 'connected',
-      services: count
-    });
-  } catch (error: any) {
-    res.json({ 
-      status: 'ERROR', 
-      timestamp: new Date().toISOString(),
-      database: 'disconnected',
-      error: error.message
-    });
-  }
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
 // API routes
