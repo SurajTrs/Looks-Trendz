@@ -1,11 +1,10 @@
 import express from 'express';
 import { body, validationResult } from 'express-validator';
-import { PrismaClient } from '@prisma/client';
 import { authenticate, authorize } from '../middleware/auth';
 import { createError } from '../middleware/errorHandler';
+import prisma from '../lib/prisma';
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 // Get all services (public)
 router.get('/', async (req, res, next) => {
